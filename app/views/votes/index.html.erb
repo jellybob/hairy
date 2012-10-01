@@ -8,6 +8,12 @@
   <p>Below are 5 hairstyles, all of which I'd really rather not be wearing for the next month. Pick my poison. And donate more money!</p>
 </section>
 
+<% if flash.alert %>
+  <div class="alert alert-error">
+    <%= flash.alert %>
+  </div>
+<% end %>
+
 <form method="post" action="/vote" class="form">
   <% [ "Padawan", "Mohawk", "Cueball", "Inverse Mohawk", "Smiley" ].each do |style| %>
     <div class="span2" style="text-align: center">
