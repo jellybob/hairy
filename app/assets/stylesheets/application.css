@@ -11,4 +11,18 @@
  *= require_self
  *= require_tree .
  */
+.btn-vote {
+  width: 250px;
+  height: 75px;
+  font-size: 3em;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
 
+.option {
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 1em;
+}
