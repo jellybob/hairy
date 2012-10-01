@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001205938) do
+ActiveRecord::Schema.define(:version => 20121001215014) do
 
   create_table "votes", :force => true do |t|
-    t.integer  "answer"
+    t.string   "answer"
     t.string   "ip_address"
     t.string   "user_agent"
     t.datetime "created_at", :null => false
