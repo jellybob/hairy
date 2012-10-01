@@ -1,14 +1,18 @@
-<h1>Thanks!</h1>
-<p>You've voted now, so to keep it fair you shouldn't vote again. I'm sure you could work out how given enough effort, but then I'll have to track you down and shave your head as well.</p>
-<p>Haven't donated yet? Here's a big button to do so!</p>
-<a href="http://uk.virginmoneygiving.com/fundraiser-web/fundraiser/showFundraiserProfilePage.action?userUrl=jonwood" class="btn btn-primary btn-large">Donate</a>
+<div class="span8">
+  <h1>Thanks!</h1>
+  <p>You've voted now, so to keep it fair you shouldn't vote again. I'm sure you could work out how given enough effort, but then I'll have to track you down and shave your head as well.</p>
+  <p>Haven't donated yet? Here's a big button to do so!</p>
+  <a href="http://uk.virginmoneygiving.com/fundraiser-web/fundraiser/showFundraiserProfilePage.action?userUrl=jonwood" class="btn btn-primary btn-large">Donate</a>
+</div>
 
-<h2>The Scores</h2>
-<table class="table">
-  <% @scoreboard.each do |score| %>
-    <tr>
-      <th width="20px"><%= score["number"] %></th>
-      <td>The <%= score["answer"] %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="span3">
+  <h2>The Scores</h2>
+  <table class="table">
+    <% @scoreboard.each do |score| %>
+      <tr>
+        <th width="20px"><%= score["number"] %></th>
+        <td>The <%= score["answer"] %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
