@@ -9,4 +9,4 @@ page = agent.get "http://uk.virginmoneygiving.com/fundraiser-web/fundraiser/show
 total = page.search("dl dd:first").text.strip
 
 # Write it
-File.open(File.join(File.dirname(__FILE__), "..", "tmp", "total.txt"), "w") { |f| f.print(total) }
+File.open(File.join("/tmp", "hairy-total.txt"), "w") { |f| f.print(total) }
