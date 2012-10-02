@@ -1,5 +1,7 @@
 class VotesController < ApplicationController
   def index
+    @total = File.read(Rails.root.join("tmp", "total.txt"))
+
     if cookies.key?(:responded)
       @scoreboard = Vote.connection.execute("SELECT answer, COUNT(answer) AS number FROM votes GROUP BY answer ORDER BY number DESC")
       render :thanks
