@@ -12,13 +12,15 @@
   <a href="http://uk.virginmoneygiving.com/fundraiser-web/fundraiser/showFundraiserProfilePage.action?userUrl=jonwood" class="btn btn-primary btn-large">Donate</a>
 </div>
 
-<div class="span12">
-  <%= form_tag "/vote", method: "put" do |f| %>
-    <h2>Update Additional Amount</h2>
-    £<input name="amount" value="<%= Totalizer.additional %>">
-    <p><button type="submit" class="btn btn-success">Update</button></p>
-  <% end %>
-</div>
+<% if @updater_active %>
+  <div class="span12">
+    <%= form_tag "/vote", method: "put" do |f| %>
+      <h2>Update Additional Amount</h2>
+      £<input name="amount" value="<%= Totalizer.additional %>">
+      <p><button type="submit" class="btn btn-success">Update</button></p>
+    <% end %>
+  </div>
+<% end %>
 
 <%= javascript_include_tag :application %>
 <script src="http://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
@@ -30,7 +32,13 @@
   });
 
   $('form').live('submit', function () {
-      $.post('/vote', { _method: 'put', amount: $('input[name="amount"]').val() })
-      return false;
+    $.post('/vote', { _method: 'put', amount: $('input[name="amount"]').val() })
+    return false;
   })
+
+  <% if @updater_active %>
+  setInterval(function () {
+    $.get('/update_total', function (data) { console.log("Updated: " + data) })
+  }, 60000)
+  <% end %>
 </script>
