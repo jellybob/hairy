@@ -35,3 +35,7 @@ HairSurvey::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+Pusher.app_id = '28933'
+Pusher.key    = 'ce84d609283ecca37c3d'
+Pusher.secret = '78e4b48d934c8b677ea9'
